@@ -7,6 +7,7 @@
 		<script src="js/jquery-1.8.3.js"></script>
 		<script src="js/jquery-ui-1.9.2.custom.js"></script>
 		<script src="js/entry-list.js"></script>
+		<script src="js/bundle.js"></script>
 		<script src="js/title-section.js"></script>
 		<script src="js/markdown_helper.js"></script>
 		<style>
@@ -70,8 +71,7 @@
 		</section>
 		<div>
 		<span id="Editor">
-			<textarea id="inputPane" cols="80" rows="20" class="pane" style="height: 370px; width:600px">
-			</textarea><br>
+			<textarea id="markdown" placeholder="[Enter Markdown here]" style="height: 370px; width:600px"></textarea><br>
 			<div style="margin-right:0px;"><span style="display: inline-block;width: 400px;"></span><button id="pre">Preview</button><button id="save">Save</button></div>
 		</span>
 		<div id="MarkdownHelper">
@@ -150,6 +150,9 @@
 				</div>
 			</div>
 		</div>
+		</div>
+		<div id="dialog-message" title="Download complete">
+			
 		</div>
 	</body>
 </html>
