@@ -1,3 +1,3 @@
 $(function() {
-	$( "#MarkdownHelperAccord" ).accordion();
+	$("#MarkdownHelperAccord").accordion();
 });
