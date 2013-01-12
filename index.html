@@ -10,7 +10,7 @@
 		<script src="js/markdown_helper.js"></script>
 		<style>
 			#Editor{
-				
+				float:left;
 			}
 			/* Title section */ 
 			#TitleSection h1 [contenteditable="true"]{
@@ -52,12 +52,14 @@
 		</div>
 		<section id="TitleSection">
 			dsgfdhrdfdjfjfj
-			<h1><span>Title:</span> <div name="title" contenteditable="true" style="display:inline-block; width:70%;" class="single-line">New entry</div>
-			<div style="float:right;"><span>Date:</span> <input type="date" name="date" /></h1></div>
-		</section>		
+			<h1><span>Title:</span> <div id="title" name="title" contenteditable="true" style="display:inline-block; width:70%;" class="single-line">New entry</div>
+			<div style="float:right;"><span>Date:</span> <input id="date" type="date" name="date" /></h1></div>
+		</section>
+		<div>
 		<span id="Editor">
-			<textarea id="inputPane" cols="80" rows="20" class="pane" style="height: 356px; margin: 0px -6.15px 0px 0px; width: 649px;">
-			</textarea>
+			<textarea id="inputPane" cols="80" rows="20" class="pane" style="height: 370px; width:935px">
+			</textarea><br>
+			<div style="margin-right:0px;"><span style="display: inline-block;width: 75%;"></span><button id="pre">Preview</button><button id="save">Save</button></div>
 		</span>
 		<div id="MarkdownHelper">
 			<div id="MarkdownHelperAccord">
