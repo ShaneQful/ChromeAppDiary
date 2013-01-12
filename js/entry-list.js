@@ -1,5 +1,3 @@
-
-
 $(function() {
 	var entryList = $( "#entry-list" );
 	entryList.selectable({

@@ -20,6 +20,11 @@ $(function() {
 		$("#dialog-message").dialog("open");
 	});
 	$("#save").click(function(){
-		//Move to local storage and store in dom
+		"use strict";
+		var date, title, body;
+		date = $("#date").val();
+		title = $("#title").text();
+		body = $("#markdown").val();
+		save(date,title,body);
 	});
 });

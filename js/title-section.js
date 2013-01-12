@@ -1,10 +1,10 @@
 $(function() {
 	var title = $('#title');
 
-	title.blur(function() { 
-		var title = $(this).text();
-		data.changeTitle(title);
-	});
+// 	title.blur(function() { 
+// 		var title = $(this).text();
+// 		data.changeTitle(title);
+// 	});
 
 	// addEvent(title, 'blur', function () {
 	//   // lame that we're hooking the blur event
