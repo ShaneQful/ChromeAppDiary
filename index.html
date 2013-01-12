@@ -6,6 +6,7 @@
 		<link href="css/redmond/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 		<script src="js/jquery-1.8.3.js"></script>
 		<script src="js/jquery-ui-1.9.2.custom.js"></script>
+		<script src="js/entry-list.js"></script>
 		<script src="js/title-section.js"></script>
 		<script src="js/markdown_helper.js"></script>
 		<style>
@@ -36,7 +37,14 @@
 
 			#EntryList{
 				float:left;
+				margin-right: 10px;
 			}
+			
+			#entry-list .ui-selecting { background: #FECA40; }
+			#entry-list .ui-selected { background: #F39814; color: white; }
+			#entry-list ul { list-style-type: none; margin: 0; padding: 0; width: 200px; }
+			#entry-list li { list-style: none; margin: 3px; padding: 0.4em;  }
+ 
 			#MarkdownHelper{
 				float:right;
 				width: 25%;
@@ -48,9 +56,13 @@
 		</style>
 	</head>
 	<body>
-		<div id="EntryList" style="display:none;">
-			<input type="button" />
-
+		<div id="EntryList">
+			<div><button>New</button><button>Delete</button></div>
+			<ul id="entry-list">
+				<li class="ui-widget-content">Title 1</li>
+				<li class="ui-widget-content">Title 2</li>
+				<li class="ui-widget-content">Title 3</li>
+			</ul>	
 		</div>
 		<section id="TitleSection">
 			<h1><span>Title:</span> <div id="title" name="title" contenteditable="true" style="display:inline-block; width:70%;" class="single-line">New entry</div>
