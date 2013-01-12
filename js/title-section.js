@@ -18,3 +18,4 @@ addEvent(document.getElementById('clear'), 'click', function () {
 if (localStorage.getItem('title')) {
   title.innerHTML = localStorage.getItem('title');
 }
+var xtyui = null;
