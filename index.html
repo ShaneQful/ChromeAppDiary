@@ -22,12 +22,19 @@
 				width: 25%;
 				height: 400px;
 			}
+			body{
+				margin: 30px;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="EntryList" style="display:none;"></div>
 		<div id="TitleSection"></div>
-		<div id="Editor"></div>
+		<div>
+		<span id="Editor">
+			<textarea id="inputPane" cols="80" rows="20" class="pane" style="height: 356px; margin: 0px -6.15px 0px 0px; width: 649px;">
+			</textarea>
+		</span>
 		<div id="MarkdownHelper">
 			<div id="MarkdownHelperAccord">
 				<h3>Headers:</h3>
@@ -103,6 +110,7 @@
 					</code>
 				</div>
 			</div>
+		</div>
 		</div>
 	</body>
 </html>
