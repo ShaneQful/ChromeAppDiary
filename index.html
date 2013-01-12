@@ -6,14 +6,34 @@
 		<link href="css/redmond/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 		<script src="js/jquery-1.8.3.js"></script>
 		<script src="js/jquery-ui-1.9.2.custom.js"></script>
+		<script src="js/title-section.js"></script>
 		<script src="js/markdown_helper.js"></script>
 		<style>
 			#Editor{
 				
 			}
-			#TitleSection{
-				
+			/* Title section */ 
+			#TitleSection h1 [contenteditable="true"]{
+				font-weight: normal;
 			}
+			#TitleSection h1 {
+				font-family:arial;
+				font-size: 16pt;
+			}
+		    [contenteditable="true"].single-line {
+		        white-space: nowrap;
+		        width:200px;
+		        overflow: hidden;
+		    } 
+		    [contenteditable="true"].single-line br {
+		        display:none;
+
+		    }
+		    [contenteditable="true"].single-line * {
+		        display:inline;
+		        white-space:nowrap;
+		    }
+
 			#EntryList{
 				float:left;
 			}
@@ -28,9 +48,12 @@
 		</style>
 	</head>
 	<body>
-		<div id="EntryList" style="display:none;"></div>
-		<div id="TitleSection"></div>
-		<div>
+		<div id="EntryList" style="display:none;">
+		</div>
+		<section id="TitleSection">
+			<h1><span>Title:</span> <div name="title" contenteditable="true" style="display:inline-block; width:70%;" class="single-line">New entry</div>
+			<div style="float:right;"><span>Date:</span> <input type="date" name="date" /></h1></div>
+		</section>		
 		<span id="Editor">
 			<textarea id="inputPane" cols="80" rows="20" class="pane" style="height: 356px; margin: 0px -6.15px 0px 0px; width: 649px;">
 			</textarea>
