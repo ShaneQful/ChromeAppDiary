@@ -1,0 +1,5 @@
+
+
+$(function() {
+	$( "#entry-list" ).selectable();
+});
