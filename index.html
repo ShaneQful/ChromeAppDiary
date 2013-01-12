@@ -10,6 +10,7 @@
 		<script src="js/bundle.js"></script>
 		<script src="js/title-section.js"></script>
 		<script src="js/markdown_helper.js"></script>
+		<script src="js/data.js"></script>
 		<style>
 			#Editor{
 				float:left;
@@ -44,7 +45,7 @@
 			#entry-list .ui-selecting { background: #FECA40; }
 			#entry-list .ui-selected { background: #F39814; color: white; }
 			#entry-list ul { list-style-type: none; margin: 0; padding: 0; width: 200px; }
-			#entry-list li { list-style: none; margin: 3px; padding: 0.4em;  }
+			#entry-list li { cursor: pointer; list-style: none; margin: 3px; padding: 0.4em; margin-left: -40px;  }
  
 			#MarkdownHelper{
 				float:right;
@@ -58,11 +59,8 @@
 	</head>
 	<body>
 		<div id="EntryList">
-			<div><button>New</button><button>Delete</button></div>
+			<div><button id="newBut">New</button><button id="deleteBut">Delete</button></div>
 			<ul id="entry-list">
-				<li class="ui-widget-content">Title 1</li>
-				<li class="ui-widget-content">Title 2</li>
-				<li class="ui-widget-content">Title 3</li>
 			</ul>	
 		</div>
 		<section id="TitleSection">
