@@ -17,7 +17,7 @@ function refreshList() {
 			.click(function() { newEntry(); });
 		$("#deleteBut")
 			.button()
-			.click(function() { deleteEntry(this.selected.data); });
+			.click(function() { deleteEntry(); });
 	}
 	entryListEl.html('');
 	$(data.entries).each(function() {

@@ -27,8 +27,8 @@ function selectEntry(index) {
 	data.selectedEntry = index;
 	var entry = getSelectedEntry(index);
 	titleEl.text(entry.title);
-	dateEl.val(entry.date);
-	bodyEl.val(entry.body);
+	dateEl.text(entry.date);
+	bodyEl.text(entry.body);
 	refreshListSelectedItem();
 }
 
@@ -45,10 +45,8 @@ function newEntry() {
 }
 
 // Delete entry
-function deleteEntry() {
-	console.log(data.entries);
-	data.entries.splice(data.selectedEntry,1);
-	console.log(data.entries);
+function deleteEntry(entry) {
+	data.entries.remove(entry);
 	refreshList();
 	selectEntry(data.entries.length - 1);
 }
@@ -60,14 +58,20 @@ function save(date,title,body){
 	entry.date = date;
 	entry.title = title;
 	entry.body = body;
+// 	key = "entries";//+data.selectedEntry;
+// 	chrome.storage.sync.set({
+// 		key:{
+// 			date:entry.date,
+// 			title:entry.title,
+// 			body:entry.body
+// 		}
+// 	});
 	chrome.storage.sync.set({"data":data});
-	refreshList();
 }
 
 $(function load() {
 	chrome.storage.sync.get("data", function (items){
 		if($.isEmptyObject(items)){
-			data.selectedEntry = 0;
 			newEntry();
 		}else{
 			data = items.data;
@@ -77,5 +81,18 @@ $(function load() {
 			$("#markdown").val(entry.body);
 			refreshList();
 		}
+<<<<<<< HEAD
 	});
+=======
+		data.selectedEntry = chrome.storage.sync.selected;
+		entry = data.entries[data.selectedEntry];
+		$("#date").val(entry.date);
+		$("#title").text(entry.title);
+		$("#markdown").val(entry.body);
+		data.selectedEntry = 0;
+		refreshList();
+	}else{
+		newEntry();
+	}
+>>>>>>> 602b57d6e8dc0760649b4d900e5c51a588750123
 });

@@ -2,22 +2,13 @@
 <html lang="us">
 	<head>
 		<meta charset="utf-8">
-		<title>Diary</title>
+		<title>jQuery UI Example Page</title>
 		<link href="css/redmond/jquery-ui-1.9.2.custom.css" rel="stylesheet">
 		<script src="js/jquery-1.8.3.js"></script>
 		<script src="js/jquery-ui-1.9.2.custom.js"></script>
-		<script src="js/data.js"></script>
-		<script src="js/entry-list.js"></script>
-		<script src="js/bundle.js"></script>
 		<script src="js/title-section.js"></script>
 		<script src="js/markdown_helper.js"></script>
 		<style>
-			body {
-  				-webkit-user-select: text;
-			}
-			html{
-				overflow-y:auto;
-			}
 			#Editor{
 				float:left;
 			}
@@ -45,14 +36,7 @@
 
 			#EntryList{
 				float:left;
-				margin-right: 10px;
 			}
-			
-			#entry-list .ui-selecting { background: #FECA40; }
-			#entry-list .ui-selected { background: #F39814; color: white; }
-			#entry-list ul { list-style-type: none; margin: 0; padding: 0; width: 200px; }
-			#entry-list li { cursor: pointer; list-style: none; margin: 3px; padding: 0.4em; margin-left: -40px;  }
- 
 			#MarkdownHelper{
 				float:right;
 				width: 25%;
@@ -64,19 +48,26 @@
 		</style>
 	</head>
 	<body>
-		<div id="EntryList">
-			<div><button id="newBut">New</button><button id="deleteBut">Delete</button></div>
-			<ul id="entry-list">
-			</ul>	
+		<div id="EntryList" style="display:none;">
+			<input type="button" />
+
 		</div>
 		<section id="TitleSection">
-			<h1><span>Title:</span> <div id="title" name="title" contenteditable="true" style="display:inline-block; width:60%;" class="single-line">New entry</div>
+<<<<<<< HEAD
+			dsgfdhrdfdjfjfj
+			<h1><span>Title:</span> <div id="title" name="title" contenteditable="true" style="display:inline-block; width:70%;" class="single-line">New entry</div>
 			<div style="float:right;"><span>Date:</span> <input id="date" type="date" name="date" /></h1></div>
 		</section>
 		<div>
+=======
+			<h1><span>Title:</span> <div name="title" contenteditable="true" style="display:inline-block; width:70%;" class="single-line">New entry</div>
+			<div style="float:right;"><span>Date:</span> <input type="date" name="date" /></h1></div>
+		</section>		
+>>>>>>> 78dc9321cc0eb52b1c6dd5f56d0476b4c275257a
 		<span id="Editor">
-			<textarea id="markdown" placeholder="[Enter Markdown here]" style="height: 553px; width: 709px; resize:none;"></textarea><br>
-			<div style="margin-right:0px;"><span style="display: inline-block;width: 500px;"></span><button id="pre">Preview</button><button id="save">Save</button></div>
+			<textarea id="inputPane" cols="80" rows="20" class="pane" style="height: 370px; width:935px">
+			</textarea><br>
+			<div style="margin-right:0px;"><span style="display: inline-block;width: 75%;"></span><button id="pre">Preview</button><button id="save">Save</button></div>
 		</span>
 		<div id="MarkdownHelper">
 			<div id="MarkdownHelperAccord">
@@ -154,9 +145,6 @@
 				</div>
 			</div>
 		</div>
-		</div>
-		<div id="dialog-message" title="Preview">
-			
 		</div>
 	</body>
 </html>
