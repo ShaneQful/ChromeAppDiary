@@ -48,28 +48,28 @@ function save(date,title,body){
 	entry.date = date;
 	entry.title = title;
 	entry.body = body;
-	chrome.storage.sync.setItem("entry"+data.selectedEntry,{
-		date:entry.date,
-		title:entry.title,
-		body:entry.body
-	});
-	chrome.storage.sync.setItem("selectedEntry",data.selectedEntry);
+// 	key = "entries";//+data.selectedEntry;
+// 	chrome.storage.sync.set({
+// 		key:{
+// 			date:entry.date,
+// 			title:entry.title,
+// 			body:entry.body
+// 		}
+// 	});
+	chrome.storage.sync.set({"data":data});
 }
 
 $(function load() {
-	"use strict";
-	if(chrome.storage.sync && chrome.storage.sync.selectedEntry ){
-		var i, entry;
-		for(i = 0; chrome.storage.sync["entry"+i]; i++){
-			data.entries.push(chrome.storage.sync["entry"+i]);
+	chrome.storage.sync.get("data", function (items){
+		if($.isEmptyObject(items)){
+			newEntry();
+		}else{
+			data = items.data;
+			entry = data.entries[data.selectedEntry];
+			$("#date").val(entry.date);
+			$("#title").text(entry.title);
+			$("#markdown").val(entry.body);
+			refreshList();
 		}
-		data.selectedEntry = chrome.storage.sync.selected;
-		entry = data.entries[data.selectedEntry];
-		$("#date").val(entry.date);
-		$("#title").text(entry.title);
-		$("#markdown").val(entry.body);
-		refreshList();
-	}else{
-		newEntry();
-	}
+	});
 });
