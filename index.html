@@ -7,10 +7,12 @@
 		<script src="js/jquery-1.8.3.js"></script>
 		<script src="js/jquery-ui-1.9.2.custom.js"></script>
 		<script src="js/data.js"></script>
+		<script src="js/base64.js"></script>
 		<script src="js/entry-list.js"></script>
 		<script src="js/bundle.js"></script>
 		<script src="js/title-section.js"></script>
 		<script src="js/markdown_helper.js"></script>
+		<script src="js/export.js"></script>
 		<style>
 			body {
   				-webkit-user-select: text;
@@ -68,6 +70,8 @@
 			<div><button id="newBut">New</button><button id="deleteBut">Delete</button></div>
 			<ul id="entry-list">
 			</ul>	
+			<button id="export">Export Diary</button>
+			<div id="export-links" style="display:none;"></div>
 		</div>
 		<section id="TitleSection">
 			<h1><span>Title:</span> <div id="title" name="title" contenteditable="true" style="display:inline-block; width:60%;" class="single-line">New entry</div>
