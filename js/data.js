@@ -58,12 +58,12 @@ function save(date,title,body){
 	entry.date = date;
 	entry.title = title;
 	entry.body = body;
-	chrome.storage.sync.set({"data":data});
+	chrome.storage.local.set({"data":data});
 	refreshList();
 }
 
 $(function load() {
-	chrome.storage.sync.get("data", function (items){
+	chrome.storage.local.get("data", function (items){
 		if($.isEmptyObject(items)){
 			data.selectedEntry = 0;
 			newEntry();
