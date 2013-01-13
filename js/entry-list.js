@@ -29,7 +29,7 @@ function refreshList() {
 		entryListEl.append(item);
 	});
 	entryListEl.selectable("refresh");
-	if (data.selectedEntry)
+	if ($.isEmptyObject(data.selectedEntry))
 		refreshListSelectedItem();
 }
 
