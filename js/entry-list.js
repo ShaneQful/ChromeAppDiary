@@ -7,7 +7,9 @@ $(function() {
 			alert("Diary entry " + index + ": " + itemData.title);
 		}
 	});
+
 	$( "#newBut" ).button();
+	$( "#newBut" ).click(function() { newEntry(); });
 	$( "#deleteBut" ).button();
 
 	$(data.entries).each(function() {
