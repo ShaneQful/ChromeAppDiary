@@ -1,4 +1,5 @@
 function refreshList() {
+	var entryList = $( "#entry-list" );
 	$(data.entries).each(function() {
 		var item = $("<li>" + this.title + "</li>");
 		item.addClass("ui-widget-content");

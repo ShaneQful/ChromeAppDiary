@@ -38,7 +38,7 @@ function newEntry() {
 	};
 	data.entries.push(entry);
 	selectEntry(data.entries.length - 1);
-	refreshLst();
+	refreshList();
 }
 
 // Save entry
