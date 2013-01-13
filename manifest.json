@@ -1,8 +1,8 @@
 {
-  "name": "Git Diary_",
+  "name": "DiaryDown",
   "version": "1",
   "manifest_version": 2,
-  "description": "Diary_",
+  "description": "A markdown based diary application which syncs you diary via Google's Cloud",
   "icons": {
     "16": "icon-16.png",
     "128": "icon-128.png"
