@@ -7,12 +7,14 @@ var data = {
 var titleEl;
 var dateEl;
 var bodyEl;
+var entryListEl;
 
 // Get references to html dom elements 
 $(function() {
 	titleEl = $("#title");
 	dateEl = $("#date");
 	bodyEl = $("#markdown");
+	entryListEl = $( "#entry-list" );
 });
 
 // Get the selected entry
@@ -27,6 +29,7 @@ function selectEntry(index) {
 	titleEl.text(entry.title);
 	dateEl.text(entry.date);
 	bodyEl.text(entry.body);
+	refreshListSelectedItem();
 }
 
 // Create a new entry
@@ -37,8 +40,15 @@ function newEntry() {
 		body: '',
 	};
 	data.entries.push(entry);
-	selectEntry(data.entries.length - 1);
 	refreshList();
+	selectEntry(data.entries.length - 1);
+}
+
+// Delete entry
+function deleteEntry(entry) {
+	data.entries.remove(entry);
+	refreshList();
+	selectEntry(data.entries.length - 1);
 }
 
 // Save entry
@@ -48,20 +58,13 @@ function save(date,title,body){
 	entry.date = date;
 	entry.title = title;
 	entry.body = body;
-// 	key = "entries";//+data.selectedEntry;
-// 	chrome.storage.sync.set({
-// 		key:{
-// 			date:entry.date,
-// 			title:entry.title,
-// 			body:entry.body
-// 		}
-// 	});
 	chrome.storage.sync.set({"data":data});
 }
 
 $(function load() {
 	chrome.storage.sync.get("data", function (items){
 		if($.isEmptyObject(items)){
+			data.selectedEntry = 0;
 			newEntry();
 		}else{
 			data = items.data;
