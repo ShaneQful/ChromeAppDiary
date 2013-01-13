@@ -3,7 +3,7 @@ DiaryDown
 
 An App made for the Chrome App Hackaton in Dublin.
 
-I would like to point ou this was made for a HACKaton the 
+I would like to point out this was made for a **HACK**aton. The 
 code is not pretty and would probably make someone like 
 Douglas Crockford and his followers go home take a glass of
 gin, go into a corner, curl up in a ball and cry.
