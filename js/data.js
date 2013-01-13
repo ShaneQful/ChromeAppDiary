@@ -46,9 +46,7 @@ function newEntry() {
 
 // Delete entry
 function deleteEntry() {
-	console.log(data.entries);
 	data.entries.splice(data.selectedEntry,1);
-	console.log(data.entries);
 	refreshList();
 	selectEntry(data.entries.length - 1);
 }
