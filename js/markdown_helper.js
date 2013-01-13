@@ -16,8 +16,16 @@ $(function() {
 	});
 	$("#pre").click(function(){
 		var output = md.toHTML($("#markdown").val());
-		$("#dialog-message").html(output);
-		$("#dialog-message").dialog("open");
+		output = "<h2>"+$("#title").text()+"</h2><br>"+output;
+		//Doesn't use quota uses local
+		chrome.storage.local.set({"markdown":output}, function (){
+			chrome.app.window.create('preview.html', {
+				width: 800,
+				height: 400,
+				top: 125,
+				left:250
+			});
+		});
 	});
 	$("#save").click(function(){
 		"use strict";
