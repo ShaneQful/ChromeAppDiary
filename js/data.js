@@ -1,7 +1,47 @@
 var data = {
-	selectedEntry: 0,
+	selectedEntry: undefined,
 	entries: []
 };
+
+
+var titleEl;
+var dateEl;
+var bodyEl;
+
+// Get references to html dom elements 
+$(function() {
+	titleEl = $("#title");
+	dateEl = $("#date");
+	bodyEl = $("#markdown");
+});
+
+// Get the selected entry
+function getSelectedEntry(index) {
+	return data.entries[index];
+}
+
+// Select an entry
+function selectEntry(index) {
+	data.selectedEntry = index;
+	var entry = getSelectedEntry(index);
+	titleEl.text(entry.title);
+	dateEl.text(entry.date);
+	bodyEl.text(entry.body);
+}
+
+// Create a new entry
+function newEntry() {
+	var entry = {
+		title: 'New entry',
+		date: new Date(),
+		body: '',
+	};
+	data.entries.push(entry);
+	selectEntry(data.entries.length - 1);
+	refreshLst();
+}
+
+// Save entry
 function save(date,title,body){
 	"use strict";
 	var entry = data.entries[data.selectedEntry];
